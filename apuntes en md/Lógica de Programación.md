@@ -83,7 +83,24 @@ https://app.aluracursos.com/course/logica-de-programacion-primeros-pasos/task/72
 * Buenas prácticas de programación: Nomenclatura de funciones.
 * Funciones con parámetros.
 
+### Normalmente, las funciones son creadas para retornar algo
 
+Entonces la buena práctica aprendida es crear funciones objetivas que realicen en máximo una sola acción,
+un solo cálculo y que nos retornen un valor y yo pueda reutilizar esa función en diferentes situaciones.
+
+### Interactuando con el usuario
+
+![img_8.png](img_8.png)
+
+En este caso utilizo `f12` -- `console` -- el comando `prompt()`. para introducir valores por teclado y asi poder 
+interactuar con el usuario.
+
+La sintaxis completa y correcta es: `prompt(" pregunta ")` y eso lo asignamos a una variable.
+
+Como en otros lenguajes, creé variables para almacenar las preguntas al usuario, y en este caso una variable más para
+almacenar el retorno de la función.
+
+![img_9.png](img_9.png)
 
 
 

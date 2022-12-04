@@ -5,11 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>calcularIMC</title>
+
+    <style>
+        body {
+            background-color: rgb(85, 133, 139);
+            font-family: Arial, Helvetica, sans-serif;
+            padding-left: 3rem;
+        }
+    </style>
 </head>
 
 <body>
-
+    <h1>IMC</h1>
 
     <script>
         function saltoDeLinea() {
@@ -24,6 +32,116 @@
 
         }
 
+        function calcularImc(peso, altura) {
+            imc = peso / (altura * altura);
+            return (imc);
+        }
+
+        pesoGus = 87
+        let alturaGus = 1.87      // utilizo una variable sin let y otra con let como prueba.
+
+        calcularImcGustavo = calcularImc(pesoGus, alturaGus)
+
+
+        escribir("El Imc de Gustavo es: " + calcularImcGustavo);
+
+
+
+    </script>
+
+    <h2>Ejemplo mas eficiente y resumido para usar funciones</h2>
+
+    <script>
+        // Ejemplo mas eficiente y resumido para usar funciones
+
+        function saltoDeLinea() {
+
+            document.write("<br> <br> <br>");
+
+        }
+
+        function escribir(frase) {
+            document.write(frase);
+            saltoDeLinea();
+
+        }
+
+        function calcImcResumido(peso, altura, nombre) {
+            imc = peso / (altura * altura);
+            escribir("El Imc de " + nombre + " es: " + imc.toFixed(2))     // en vez de return pido como resultado de la función la llamada a la func escribir mas los parámetros y cálculos.
+            // agregue toFixed para redondear
+        }
+        calcImcResumido(87, 1.87, "Gustavo");
+
+        calcImcResumido(58, 1.68, "Ayelén")
+
+    </script>
+
+    <h2>Normalmente, las funciones son creadas para retornar algo</h2>
+    <p>
+        en este ejemplo el código sera aun mas sintáctico y reutilizable, utilizaré return para asignar <br> justamente
+        el retorno de la función a la siguiente fórmula que calcula el promedio de ambos.
+    </p>
+
+    <script>
+
+        function saltoDeLinea() {
+
+            document.write("<br> <br> <br>");
+
+        }
+
+        function escribir(frase) {
+            document.write(frase);
+            saltoDeLinea();
+
+        }
+
+        function calcMasResumido(peso, altura) {
+            imc = peso / (altura * altura);
+            return imc;
+
+        }
+
+        let imcGus = calcMasResumido(87, 1.87);      //imc.toFixed(2)
+        let imcAye = calcMasResumido(58, 1.68);
+
+        escribir("El el promedio de Imc de Gus y Aye es: " + ((imcGus + imcAye) / 2).toFixed(2));
+
+    </script>
+
+    <h2>Agregando interacción con el usuario</h2>
+    <p>
+        En este ejemplo interactúo con el usuario a través del teclado. <br>
+    </p>
+
+    <script>
+
+        function saltoDeLinea() {
+
+            document.write("<br> <br> <br>");
+
+        }
+
+        function escribir(frase) {
+            document.write(frase);
+            saltoDeLinea();
+
+        }
+
+        function calcConUsuario(peso, altura) {
+            imc = peso / (altura * altura);
+            return imc;
+
+        }
+        let nombre = prompt("Informe su nombre: ");
+        let pesoUser = prompt(nombre + " Informe su peso: ");      //imc.toFixed(2)
+        let alturaUser = prompt(nombre + " Informe su altura: ");
+
+        let imcUser = calcConUsuario(pesoUser, alturaUser) // En esta variable almaceno el retorno de la función.
+
+        escribir("El el Imc de " + nombre + " es: " + imc.toFixed(2));
+        escribir(imc);
 
     </script>
 
