@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinación</title>
+
+    <style>
+        body {
+            background-color: rgb(37, 53, 41);
+            color: blanchedalmond;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-left: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Adivinación</h1>
+
+    <p>
+        En este ejemplo interactúo con el usuario a través del teclado. <br>
+        Y se suma el uso de if para agregar lógica.
+    </p>
+
+    <script>
+
+        function saltoDeLinea() {
+
+            document.write("<br> <br> <br>");
+
+        }
+
+        function escribir(frase) {
+            document.write(frase);
+            saltoDeLinea();
+
+        }
+
+        let numeroPensado = Math.round(Math.random() * 10);
+        let numeroAdivinado = parseInt(prompt("ingrese un valor entre 0 y 10"));
+
+        if (numeroPensado == numeroAdivinado) {
+            escribir("Usted acertó")
+        }
+        else {
+            escribir("Usted NO acertó el número correcto era el: " + numeroPensado + " y el suyo fue el: " + numeroAdivinado)
+        }
+
+
+    </script>
+
+</body>
+
+</html>

@@ -98,17 +98,44 @@ interactuar con el usuario.
 La sintaxis completa y correcta es: `prompt(" pregunta ")` y eso lo asignamos a una variable.
 
 Como en otros lenguajes, creé variables para almacenar las preguntas al usuario, y en este caso una variable más para
-almacenar el retorno de la función.
+almacenar el retorno de la función. 
+
+_Siempre va a devolver una string entonces si se multiplica lo usa como número si es suma lo concatena_
 
 ![img_9.png](img_9.png)
 
+## Lógica de programación: Conceptos primordiales 2.º curso.
 
+### Ejecute códigos diferentes dependiendo de la condición
 
+**La función `prompt()` Siempre va a devolver una string entonces si se multiplica lo usa como número si es suma lo concatena**
 
+Para solucionar esto usamos `parseInt`
 
+![img_10.png](img_10.png)
 
+### Trabajando con condiciones
 
+En esta clase crea comparaciones con `if` las cuales devuelven un booleano y son utilizadas para comparar valores.
 
+Lo explicó de forma secuencial y lógica de las 3 condiciones solo una podía cumplirse a la vez y fueron 3 `if` 
+diferentes a modo de explicación.
+
+![img_11.png](img_11.png)
+
+### Mejorando el programa de IMC
+
+Basado en la clase anterior y la tabla de la OMS se agrega el resultado para el usuario.
+
+![img_12.png](img_12.png)
+
+### Juego de adivinación de número
+
+En esta clase utilizamos `Math.random()` para generar un valor aleatorio, a este número lo redondeo con `Math.round()`.
+También se comenzó a usar el `else`.
+
+https://www.w3schools.com/js/js_random.asp tiene bastantes reglas, siempre da un num entre 0 y menor a 1 por eso
+lo multiplica por 10, y lo redondean porque es decimal.
 
 
 
