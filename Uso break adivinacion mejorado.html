@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinación mejorado con break</title>
+
+    <style>
+        body {
+            background-color: rgb(37, 53, 41);
+            color: blanchedalmond;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-left: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Adivinación uso de break </h1>
+
+    <p>
+        En este ejemplo interactúo con el usuario a través del teclado. <br>
+        Y se suma el uso de if y while para agregar lógica. <br>
+        Todo el if dentro del while va a tener la condición de que sean 3 intentos.
+    </p>
+
+    <script>
+
+        function saltoDeLinea() {
+
+            document.write("<br> <br> <br>");
+
+        }
+
+        function escribir(frase) {
+            document.write(frase);
+            saltoDeLinea();
+
+        }
+
+        let numeroPensado = Math.round(Math.random() * 10);
+
+        let intentos = 3
+        let contador = 1;
+        while (contador <= intentos) {
+
+            var numeroAdivinado = parseInt(prompt("ingrese un valor entre 0 y 10"));
+            // Utiliza mucho VAR en este caso si uso let se rompe el ultimo if porque esta fuera del while y cambia el scope.
+
+            if (numeroPensado == numeroAdivinado) {
+                alert("Usted acertó, en el intento: " + contador + " con el número: " + numeroPensado);
+                // se cambio escribir por alert para que el popUp nos permita interactuar. 
+                break;
+            }
+            else {
+                alert("Usted NO acertó.");
+            }
+            contador++;
+        }
+
+        if (numeroPensado == numeroAdivinado) {
+            escribir("Usted acertó, en el intento: " + contador + " con el número: " + numeroPensado);
+        }
+        else {
+            escribir("Usted NO acertó el número correcto era el: " + numeroPensado);
+        }
+
+        escribir("FIN")
+    </script>
+
+</body>
+
+</html>

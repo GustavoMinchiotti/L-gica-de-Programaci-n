@@ -137,6 +137,64 @@ También se comenzó a usar el `else`.
 https://www.w3schools.com/js/js_random.asp tiene bastantes reglas, siempre da un num entre 0 y menor a 1 por eso
 lo multiplica por 10, y lo redondean porque es decimal.
 
+Mejoré algo el código para el desafío sume que el usuario elija el valor n para sorteo y mejore las frases de 
+resultado con más información
+
+## Mientras que / Do y Do While
+
+### Bucles
+
+Se usó while como primer bucle.
+
+![img_13.png](img_13.png)
+
+### Otra forma de Repetir   (FOR)
+
+Van dos veces que me olvido en el bucle sumar al `contador = contador + 1` pongo solo contador mas 1 y me da error.
+Cuando es más 1 puedo usar contador++ obviamente.
+
+![img_14.png](img_14.png)
+
+### Acumulando Variables
+
+![img_15.png](img_15.png)
+
+mediaEdades no me funcionó con `let` por eso usé `var`.
+
+###  Interrumpiendo una Repetición
+https://app.aluracursos.com/course/logica-de-programacion-conceptos-primordiales/task/73401
+
+Voy a mejorar el juego de adivinación para que tenga 3 intentos, poniendo todo dentro de un while.
+Para cortar la iteración utilizamos `break` en este caso en él `if`.
+
+Utiliza mucho `VAR` en este caso si uso let se rompe el último if porque está fuera del while y cambia el scope.
+
+![img_16.png](img_16.png)
+
+### Repeticiones Anidadas
+
+En esta clase usa un for dentro de otro para dibujar líneas y columnas con `*`.
+
+![img_17.png](img_17.png)
+
+### Lo que aprendimos
+
+* Repetir tareas y actividades con iteraciones while.
+* Repetir tareas y actividades con iteraciones for. 
+* Interrumpir iteraciones con break.
+* Realizar iteraciones anidadas, un loop dentro de otro.
+
+## Clase 3
+### Campo de Texto y Botón
+
+
+
+
+
+
+
+
+
 
 
 

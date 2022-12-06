@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 a 100</title>
+    <style>
+        body {
+            background-color: rgb(17, 109, 151);
+            color: blanchedalmond;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-left: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 1 a 100</h1>
+
+    <script>
+        function saltoDeLinea() {
+
+            document.write("<br> <br> <br>");
+
+        }
+
+        function escribir(frase) {
+            document.write(frase);
+            saltoDeLinea();
+
+        }
+
+
+        let num = 0;
+        let contador = 0;
+
+        while (contador < 100) {
+
+            escribir(num = num + 2);
+            contador = num;
+        }
+
+        imprimir("FIN");
+
+        // Solución profesor
+
+        // var contador = 2;
+        // while (contador <= 100) {
+        //     imprimir(contador);
+        //     contador = contador + 2; // incrementar de dos en dos
+
+    </script>
+
+
+
+</body>
+
+</html>

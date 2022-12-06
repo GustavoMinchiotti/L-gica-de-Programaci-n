@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While  (Mundial FIFA)</title>
+
+    <style>
+        body {
+            background-color: rgb(17, 109, 151);
+            color: blanchedalmond;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-left: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Mundial FIFA</h1>
+
+    <p>
+         While 
+    </p>
+
+    <script>
+
+        function saltoDeLinea() {
+
+            document.write("<br> <br> <br>");
+
+        }
+
+        function escribir(frase) {
+            document.write(frase);
+            saltoDeLinea();
+
+        }
+
+        let anhoMundial = 1930;
+        let anhoLimite = parseInt(prompt("establezca fecha limite: "));
+
+        while (anhoMundial <= anhoLimite) {
+
+            escribir("Hubo mundial de la FIFA en el año: " + anhoMundial);
+            anhoMundial = anhoMundial + 4;
+        }
+
+        escribir("Fin iteración");
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media edades</title>
+
+    <style>
+        body {
+            background-color: rgb(17, 109, 151);
+            color: blanchedalmond;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-left: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Media de edades familiares</h1>
+
+    <p>
+        while
+    </p>
+
+    <script>
+
+        function saltoDeLinea() {
+
+            document.write("<br> <br> <br>");
+
+        }
+
+        function escribir(frase) {
+            document.write(frase);
+            saltoDeLinea();
+
+        }
+
+        let numEMiembros = parseInt(prompt("ingrese el numero de integrantes de la familia: "));
+        let contador = 1
+        let totalEdades = 0
+
+        while (contador <= numEMiembros) {
+            edad = parseInt(prompt("ingrese edad: "));
+            totalEdades = totalEdades + edad;
+            contador++;
+
+        }
+
+        var mediaEdades = totalEdades / numEMiembros;
+
+        escribir("El promedio es: " + mediaEdades);
+
+    </script>
+
+</body>
+
+</html>

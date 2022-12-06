@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For anidado</title>
+
+    <style>
+        body {
+            background-color: rgb(37, 53, 41);
+            color: blanchedalmond;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-left: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>For anidado y dibujo de líneas </h1>
+
+    <p>
+        En este ejemplo dibujo lineas con *, no lleva mucha explicación es un for dentro de otro.<br>
+        
+    </p>
+
+    <script>
+
+        function saltoDeLinea() {
+
+            document.write("<br>");
+
+        }
+
+        function escribir(frase) {
+            document.write(frase);
+            saltoDeLinea();
+
+        }
+
+        for (var lineas = 1; lineas <= 5; lineas++) { //no lleva demasiada explicación, estas son las lineas... 
+
+            for (var columnas = 1; columnas <= 10; columnas++) { // estas las columnas...
+
+                document.write("*");
+            }
+            saltoDeLinea();
+        }
+        saltoDeLinea();
+        saltoDeLinea();
+
+        escribir("FIN")
+    </script>
+
+</body>
+
+</html>

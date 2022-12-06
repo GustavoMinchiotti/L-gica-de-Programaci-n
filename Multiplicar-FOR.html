@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For / multiplicar</title>
+
+    <style>
+        body {
+            background-color: rgb(17, 109, 151);
+            color: blanchedalmond;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-left: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Multiplicar de 1 a 10 cualquier valor</h1>
+
+    <p>
+        For
+    </p>
+
+    <script>
+
+        function saltoDeLinea() {
+
+            document.write("<br> <br> <br>");
+
+        }
+
+        function escribir(frase) {
+            document.write(frase);
+            saltoDeLinea();
+
+        }
+
+        let num = parseInt(prompt("ingrese un numero a multiplicar  multiplicando"));
+        // Van dos veces que me olvido en el bucle sumar al `contador = contador + 1` pongo solo contador mas 1 y me da error.
+        // cuando es mas 1 puedo usar contador++ obviamente.
+
+        for (var multi = 1; multi <= 10; multi = multi + 1) {
+
+            escribir(num * multi);
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
