@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Clase 5 ejercicio</title>
+
+    <style>
+        body {
+            background-color: rgb(82, 0, 0);
+            color: blanchedalmond;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-left: 3rem;
+        }
+
+        p {
+            border-style: solid;
+            border-width: medium;
+            padding: 7px;
+        }
+    </style>
+</head>
+
+<h1>Recetas de Armando</h1>
+<br>
+<p>
+    Cambia el código para que no se puedan agregar los ingredientes repetidos. <br>
+    Copié el ejercicio anterior y lo adapté. <br>
+    hice que el while guarde el primer ingrediente luego creé la bandera y en el for itero cada posición. <br>
+    si el ingrediente nuevo de repite cambia a flag true rompe y sale sin guardar. <br>
+    el if siguiente si flag sigue falso hace el push y suma el contador.
+</p>
+<br>
+
+<script>
+
+    var ingredientes = [];
+    var cantidad = parseInt(prompt("¿Cuántos ingredientes vas a añadir?"));
+    var contador = 1;
+
+    while (contador <= cantidad) {
+        var ingrediente = prompt("Informe el ingrediente " + contador);
+
+        let flag = false;
+
+        for (let i = 0; i < cantidad; i++) {
+            if (ingrediente == ingredientes[i]) {
+                flag = true;
+                break;
+            }
+        }
+        if (flag == false) {
+            ingredientes.push(ingrediente);
+            contador++;
+        }
+
+
+    }
+
+    console.log(ingredientes);
+
+    document.write(ingredientes)
+
+</script>
+
+<script>
+    function hacerArray(cuantasPosiciones) { // esta función va a crear arrays con la cantidad de posiciones de su parámetro
+        let numSecretoA = []; // inicializo el array vacío
+        let contador = 1; // inicializo el contador
+
+        while (contador <= cuantasPosiciones) { // condición del while para iterar
+            let numGeneradoAleatorio = aleatorioNum();
+            let flagEncontrado = false;
+
+            if (numGeneradoAleatorio != 0) { // este filtra toda la iteración y si es un 0 no lo guarda nunca
+
+                for (let i = 0; i < numSecretoA.length; i++) {  // en este for itero el largo que vaya teniendo el array generado
+                    if (numGeneradoAleatorio == numSecretoA[i]) {   // si hay un igual con la bandera/flag en true corta y no lo almacena 
+                        flagEncontrado = true;
+                        break;
+                    }
+                }
+
+                if (flagEncontrado == false) { // en este if si flag sigue siendo falso es decir que no se repitió el numero dentro del array 
+                    numSecretoA.push(numGeneradoAleatorio); // crea un valor nuevo y suma al contador de esta manera solo almacena los no repetidos.
+                    contador++;
+                }
+            }
+        }
+        return numSecretoA; // retorna el array que se forma
+    }
+
+    let numSecreto = hacerArray(4);
+</script>
+
+<!-- SOLUCIÓN DEL PROFESOR
+
+<h1>Recetas de Armando </h1>
+
+<script>
+
+    var ingredientes = [];
+    var cantidad = parseInt(prompt("¿Cuántos ingredientes vas a añadir?"));
+    var contador = 1;
+
+    while (contador <= cantidad) {
+        var ingrediente = prompt("Informe el ingrediente " + contador);
+        var existe = false;
+        for (var posicion = 0; posicion < ingredientes.length; posicion++) {
+            if (ingredientes[posicion] == ingrediente) {
+                existe = true;
+                alert("repetido " + ingrediente);
+                break;
+            }
+        }
+        if (existe == false) {
+            ingredientes.push(ingrediente);
+            contador++;
+        }
+    }
+    console.log(ingredientes);
+</script> -->

@@ -184,18 +184,75 @@ En esta clase usa un for dentro de otro para dibujar líneas y columnas con `*`.
 * Interrumpir iteraciones con break.
 * Realizar iteraciones anidadas, un loop dentro de otro.
 
-## Clase 3
+## Clase 3 comenzamos con jQuery
+
+https://www.w3schools.com/js/js_jquery_selectors.asp
+
+jQuery fue creada en 2006 por John Resig. Fue diseñada para manejar incompatibilidades del navegador y simplificar la
+manipulación del DOM, eventos, animaciones y Ajax etc.
+
+Es una de las librerías más populares de Js en el mundo.
+
 ### Campo de Texto y Botón
+`Imput` y `button`
 
+En esta clase haremos más interactiva la página, usando botones y campos de entrada con lógica y jQuery.
 
+Continuando con este programa se mejora un poco la usabilidad haciendo que el campo input este focalizado al cargar <br>
+la página y cada vez hagamos clic se <strong>"limpie"</strong> el campo y vuelva a tener focalizado input. <br>
+Por último hacemos random al número para adivinar.
 
+![img_18.png](img_18.png)
 
+### Lo que aprendimos
+* A mejorar la interacción del usuario con uso de botones.
+* A mejorar la interacción del usuario con uso de cajas de texto.
+* A mejorar la usabilidad de nuestro programa con `focus`.
 
+## Clase 4
+### Arrays
 
+Los iteramos con `FOR`, el profesor lo explica simple, [ el for tiene 3 argumentos posición inicial, condición , sumador]
 
+![img_19.png](img_19.png)
 
+<p>
+    1. creo el array <br>
+    2. con el for recorro el array <br>
+    3. el if dentro del for va a comparar los 4 valores del array con mi input <br>
+    4. si es verdadero transforma la variable encontrado en verdadera // se explica en el segundo if. <br>
+    5. con el break corto la ejecución con el primer acierto que tenga para que no vuelva a entrar al bucle. En una 
+    lista muy grande ahorra tiempo. <br>
+    6. en el segundo IF mientras sea falso muestra erró, cuando es true no muestra nada. <br>
+    <br>
+    7. tengo una función, dentro un for dentro del for un if y otro if al mismo nivel del for. <br>
+</p>
 
+![img_20.png](img_20.png)
 
+### Tamaño del Array
+
+Solamente agrego el .length al array
+
+### Lo que aprendimos
+
+* Concepto y dinámica de los arrays.
+* Usar iteraciones para cargar arrays.
+* Descubrir el tamaño de los arrays.
+
+## Clase 5
+### Manipulando Array
+
+Al juego de adivinar número con array le agrego 2 funciones para que genere arrays con números aleatorios.
+Costó bastante.
+
+### El ejercicio no fue tan difícil, pero me costó bastante entender la clase en donde filtra los duplicados, 5 - video 4.
+
+### Lo que aprendimos
+
+* Ingresar valores manualmente en los arrays con la función push.
+* Resolver problemas más complejos usando varios conceptos de programación juntos en un mismo programa 
+(_Loops, arrays, condiciones, funciones y fórmulas matemáticas_).
 
 
 

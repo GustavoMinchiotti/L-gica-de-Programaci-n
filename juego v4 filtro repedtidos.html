@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> manejo de Arrays</title>
+
+    <style>
+        body {
+            background-color: rgb(82, 0, 0);
+            color: blanchedalmond;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-left: 3rem;
+        }
+
+        p {
+            border-style: solid;
+            border-width: medium;
+            padding: 7px;
+        }
+    </style>
+</head>
+
+<h1>Uso de ARRAYS y manipulación mas filtrar repetidos</h1>
+
+<input type="text"> <br> <br><br>
+
+<button>Juego secreto</button>
+
+<script>
+
+    function aleatorioNum() {
+        return Math.round(Math.random() * 10);
+    }
+
+
+    function hacerArray(cuantasPosiciones) { // esta función va a crear arrays con la cantidad de posiciones de su parámetro
+        let numSecretoA = []; // inicializo el array vacío
+        let contador = 1; // inicializo el contador
+
+        while (contador <= cuantasPosiciones) { // condición del while para iterar
+            let numGeneradoAleatorio = aleatorioNum();
+            let flagEncontrado = false;
+
+            if (numGeneradoAleatorio != 0) { // este filtra toda la iteración y si es un 0 no lo guarda nunca
+
+                for (let i = 0; i < numSecretoA.length; i++) {  // en este for itero el largo que vaya teniendo el array generado
+                    if (numGeneradoAleatorio == numSecretoA[i]) {   // si hay un igual con la bandera/flag en true corta y no lo almacena 
+                        flagEncontrado = true;
+                        break;
+                    }
+                }
+
+                if (flagEncontrado == false) { // en este if si flag sigue siendo falso es decir que no se repitió el numero dentro del array 
+                    numSecretoA.push(numGeneradoAleatorio); // crea un valor nuevo y suma al contador de esta manera solo almacena los no repetidos.
+                    contador++;
+                }
+            }
+        }
+        return numSecretoA; // retorna el array que se forma
+    }
+
+    let numSecreto = hacerArray(4);
+
+    console.log(numSecreto);
+
+    let input = document.querySelector("input"); // de esta manera capturo el input dentro de Js Manejo del DOM
+
+    input.focus(); // foco en input cuando carga la pagina.
+
+    //  A function that is checking if the number that the user inputs is the same as the number that the computer generates.
+    function verificar() {
+
+        let encontrado = false;
+
+        // Checking if the number entered by the user is equal to the number in the array.
+        for (posición = 0; posición < numSecreto.length; posición++) {
+            if (parseInt(input.value) == numSecreto[posición]) {
+                alert("Usted acertó");
+                encontrado = true;
+                break;
+            }
+        }
+
+        if (encontrado == false) {
+            alert("Usted erró");
+        }
+
+
+        input.value = "";   //Limpia el campo
+        input.focus();  // hace foco en el campo
+    }
+
+    let botón = document.querySelector("button"); // capturo el botón
+    botón.onclick = verificar; // agrego un event listener  ---- si llamo a la función con los paréntesis se rompe!!!
+
+</script>
+
+<p>
+    1. creo el array <br>
+    2. con el for recorro el array <br>
+    3. el if dentro del for va a comparar los 4 valores del array con mi input <br>
+    4. si es verdadero transforma la variable encontrado en verdadera // se explica en el segundo if. <br>
+    5. con el break corto la ejecución con el primer acierto que tenga para que no vuelva a entrar al bucle. En una
+    lista muy grande ahorra tiempo. <br>
+    6. en el segundo IF mientras sea falso muestra erró, cuando es true no muestra nada. <br>
+    <br>
+    7. tengo una función, dentro un for dentro del for un if y otro if al mismo nivel del for. <br>
+    <br>
+    8. PARA QUE EL ARRAY TENGA NÚMEROS RANDOM VOY A CREAR VARIAS FUNCIONES.
+
+    A. Una que cree números aleatorios "ya la tenemos" = aleatorioNum estos datos van a ser random por la formula ya
+    conocida.
+
+    B. otra que llame a la función "aleatorioNum" y la meta dentro de las posiciones del array Llamada "hacerArray" <br>
+    esta func. tiene: 2 variables, ( la del array mas un contador), y dentro un while para ir cargando los random a las
+    posiciones en cada vuelta. <br>
+    Me costó bastante trabajo. <br>
+
+</p>
