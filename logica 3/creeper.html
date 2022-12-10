@@ -1,0 +1,52 @@
+<!-- 
+Su canvas debe tener el tamaño de 600 x 400 pixeles. 
+
+Rectángulo 1: 350, 300 (cabeza).
+Rectángulos 2 y 3: 90, 90 (ojos).
+Rectángulo 4: 70, 100 (nariz).
+Rectángulos 5 y 6: 40, 110 (parte de la boca). 
+
+-->
+
+<canvas width="600" height="400" style="border:1px solid #999999;">
+
+</canvas>
+
+<script>
+    let creeper = document.querySelector("canvas");
+    let pincel = creeper.getContext("2d");
+
+
+    pincel.fillStyle = "darkgreen";
+    pincel.fillRect(0, 0, 350, 300);    //cabeza
+
+
+    pincel.fillStyle = "black";
+    pincel.fillRect(50, 60, 90, 90); //ojo izq
+    pincel.fillRect(210, 60, 90, 90); //ojo der 
+    pincel.fillRect(140, 150, 70, 100); //napia 
+    pincel.fillRect(100, 190, 40, 110); //boca izq
+    pincel.fillRect(210, 190, 40, 110); //boca der
+</script>
+
+
+<!--! Solución del profesor -->
+
+<!-- <canvas width="600" height="400"></canvas>
+
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    //cabeza
+    pincel.fillStyle = 'darkgreen';
+    pincel.fillRect(200, 50, 350 ,300);
+    //ojos
+    pincel.fillStyle = 'black';
+    pincel.fillRect(250, 110, 90, 90);
+    pincel.fillRect(410, 110, 90, 90);
+    //nariz
+    pincel.fillRect(340, 200, 70, 100);
+     //boca
+    pincel.fillRect(300, 240, 40, 110);
+    pincel.fillRect(410, 240, 40, 110);
+</script> -->

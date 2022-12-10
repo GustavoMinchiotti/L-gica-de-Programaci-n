@@ -1,0 +1,70 @@
+<h1>Dibujar flor</h1>
+
+<!--<canvas width="600" height="400"> </canvas>  creo la etiqueta y la estilo -->
+
+<!-- <script>
+    let pantalla = document.querySelector("canvas"); // a traves de query conecto la etiqueta canvas con la lógica en Js 
+    let pincel = pantalla.getContext("2d"); // esta variable va  a traer todo el contenido que trabajemos en la pantalla en 2 dimensiones.
+
+    pincel.fillStyle = "crimson"    // círculo
+    pincel.beginPath();    // esta instrucción dice que comience el camino del dibujo
+    pincel.arc(300, 200, 50, 0, 2 * 3.14);   // los parámetros son: inicio x, y. luego el diámetro, ángulo inicial = 0 , ángulo final 2* py
+    pincel.fill(); // rellena la forma trazada.
+
+</script> -->
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    pincel.fillStyle = "lightgray";
+    pincel.fillRect(0, 0, 600, 400);
+
+    function dibujarCirculo(x, y, radio, color) {
+
+        pincel.fillStyle = color;
+        pincel.beginPath();
+        pincel.arc(x, y, radio, 0, 2 * 3.14);
+        pincel.fill();
+    }
+
+    dibujarCirculo(300, 200, 20, "red");   // centro flor --- diámetro 40 radio 20
+
+    dibujarCirculo(260, 200, 20, "orange");    // horizontales
+    dibujarCirculo(340, 200, 20, "black");
+
+    dibujarCirculo(300, 160, 20, "yellow");   // verticales
+    dibujarCirculo(300, 240, 20, "blue");
+
+</script>
+
+<!--! Ejemplos del profesor con funciones -->
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    pincel.fillStyle = "lightgray";
+    pincel.fillRect(0, 0, 600, 400);
+
+    function dibujarCirculo(x, y, radio, color) {
+
+        pincel.fillStyle = color;
+        pincel.beginPath();
+        pincel.arc(x, y, radio, 0, 2 * 3.14);
+        pincel.fill();
+    }
+    function dibujarFlor(x, y) {
+        dibujarCirculo(x, y + 20, 10, "blue");
+        dibujarCirculo(x, y, 10, "red");
+        dibujarCirculo(x, y - 20, 10, "yellow");
+        dibujarCirculo(x - 20, y, 10, "orange");
+        dibujarCirculo(x + 20, y, 10, "black");
+    }
+    dibujarFlor(300, 200);
+
+</script>

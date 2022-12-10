@@ -104,7 +104,7 @@ _Siempre va a devolver una string entonces si se multiplica lo usa como número 
 
 ![img_9.png](img_9.png)
 
-## Lógica de programación: Conceptos primordiales 2.º curso.
+# Lógica de programación: Conceptos primordiales 2.º curso.
 
 ### Ejecute códigos diferentes dependiendo de la condición
 
@@ -254,7 +254,63 @@ Costó bastante.
 * Resolver problemas más complejos usando varios conceptos de programación juntos en un mismo programa 
 (_Loops, arrays, condiciones, funciones y fórmulas matemáticas_).
 
+# Lógica de programación: Practicando con juegos y animaciones
+## Canvas en html
+https://www.w3schools.com/html/html5_canvas.asp
 
+https://developer.mozilla.org/es/docs/Web/API/Canvas_API
+
+Es una etiqueta contenedora para dibujar gráficos, pero los mismos deben ser dibujados en JavaScript.
+
+Dentro de la etiqueta la comienzo a estilar.
+
+![img_21.png](img_21.png)
+
+Para comenzar a dibujar usamos la función `.fillRect()` que admite 4 parámetros: `x`, `y`, `wide`, `height`.
+
+`x` e `y` representan el inicio donde comienza nuestro dibujo, `W` y `H` donde termina.
+
+Para seguir dibujando voy sobreescribiendo como en capas dentro del mismo canvas.
+
+![img_22.png](img_22.png)
+
+Más 2 soluciones en el código de la clase.
+ 
+### Lo que aprendimos
+
+* A usar el `Canvas` como una pizarra donde realizamos nuestros diseños.
+* A diseñar figuras geométricas como rectángulos y circunferencias.
+* A personalizar algunas propiedades de nuestras figuras como el color.
+
+## Utilizando funciones clase 2
+### Repetir código no es de buenos programadores
+
+En esta clase crea una función para crear varios cuadrados y optimizar asi el código.
+
+### Las iteraciones son fantásticas
+Ahora creamos funciones con bucles para rellenar todo el canvas de cuadrados.
+
+El while necesita una variable por fuera, 
+Y para for hacemos la variable dentro de la condición
+
+Ejemplo en el código.
+
+### Diseñando una flor (Círculos)
+
+Similar a la clase anterior ejemplos en el código creamos círculos y los posicionamos en el canvas.
+
+### Gráfico de barras
+
+Usé la solución del profesor VER LOS DETALLES Y EXPLICAR EL CÓDIGO. 
+
+Un dia después lo vi y lo entendí hice comentarios en el código y sirve la explicación del profesor en el aula.
+
+https://app.aluracursos.com/course/logica-de-programacion-juegos-animaciones/task/72842
+
+
+## Clase 3 Interactuando con el usuario
+
+### Nuestra pantalla tiene vida, responde sola
 
 
 

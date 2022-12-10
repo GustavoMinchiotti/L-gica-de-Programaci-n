@@ -1,0 +1,30 @@
+<h1>Canvas en html</h1>
+
+<canvas width="600" height="400"> </canvas> <!-- creo la etiqueta y la estilo -->
+
+<script>
+    let pantalla = document.querySelector("canvas"); // a traves de query conecto la etiqueta canvas con la lógica en Js 
+    let pincel = pantalla.getContext("2d"); // esta variable va  a traer todo el contenido que trabajemos en la pantalla en 2 dimensiones.
+
+    pincel.fillStyle = "lightgrey"
+    pincel.fillRect(0, 0, 600, 400);    // x, y, w, h, == inicio y fin del rectángulo.
+
+    pincel.fillStyle = "darkgreen"
+    pincel.fillRect(0, 0, 200, 400); // divido el canvas en 3 y hago el primer rectángulo
+
+    pincel.fillStyle = "darkorange"
+    pincel.fillRect(400, 0, 200, 400);  // para que no tape al anterior comienza desde donde termina el 1ero.
+
+    pincel.fillStyle = "darkblue"   //Triángulo
+    pincel.beginPath();    // esta instrucción dice que comience el camino del dibujo
+    pincel.moveTo(300, 200); // lo mando al centro del dibujo desde donde va a trazar las lineas.
+    pincel.lineTo(200, 400); // la linea ahora tiene un punto final en esas coordenada.
+    pincel.lineTo(400, 400); // la linea ahora tiene un punto final en esas coordenada.
+    pincel.fill(); // rellena la forma trazada.
+
+    pincel.fillStyle = "crimson"    // círculo
+    pincel.beginPath();    // esta instrucción dice que comience el camino del dibujo
+    pincel.arc(300, 200, 50, 0, 2 * 3.14);   // los parámetros son: inicio x, y. luego el diámetro, ángulo inicial = 0 , ángulo final 2* py
+    pincel.fill(); // rellena la forma trazada.
+
+</script>

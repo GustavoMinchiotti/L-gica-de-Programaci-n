@@ -1,0 +1,48 @@
+<canvas width="600" height="400" style="border:1px solid #999999;">
+
+</canvas>
+
+<script>
+
+
+    function crearCuadrados(x, y, color) {  // creo la func. con los pasos para crear un cuadrado relleno y con borde
+
+        let cuadrado = document.querySelector("canvas");
+        let pincel = cuadrado.getContext("2d");
+
+        pincel.fillStyle = color;
+        pincel.fillRect(x, y, 50, 50);
+        pincel.strokeStyle = "black"; //color de la linea
+        pincel.strokeRect(x, y, 50, 50); // forma de la linea
+    }
+
+    // crearCuadrados(0, 0, "red");  //llamo a la func. horizontal
+    // crearCuadrados(50, 0, "yellow");
+    // crearCuadrados(100, 0, "green");
+
+    // crearCuadrados(0, 50, "red");  //vertical
+    // crearCuadrados(0, 100, "yellow");
+    // crearCuadrados(0, 150, "green");
+
+    //<!--!  Usando while para llamar a la func. y rellenar -->
+
+    // var cont = 0; // variable contador
+
+    // while (cont < 600) {
+
+    //     crearCuadrados(cont, 0, "red");
+    //     crearCuadrados(cont, 50, "yellow");
+    //     crearCuadrados(cont, 100, "green");
+
+    //     cont = cont + 50;
+    // }
+
+    // <!--!  Usando for para llamar a la func.y rellenar-- >
+
+    for (var i = 0; i < 600; i = i + 50) {
+        crearCuadrados(i, 0, "red");
+        crearCuadrados(i, 50, "yellow");
+        crearCuadrados(i, 100, "green");
+    }
+
+</script>
