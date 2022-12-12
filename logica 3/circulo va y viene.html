@@ -1,0 +1,50 @@
+<canvas width="600" height="400"> </canvas>
+
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    pincel.fillStyle = "lightgrey";
+    pincel.fillRect(0, 0, 600, 400);
+
+    function disenharCircunferencia(x, y, radio) {
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(x, y, radio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    function limpiarPantalla() {
+
+        pincel.clearRect(0, 0, 600, 400);
+
+    }
+
+    var x = 0
+    var sentido = 1;    // me va a decir si sumo o resto posiciones de x
+
+    function actualizarPantalla() {
+
+        limpiarPantalla();
+        if (x > 600) {
+            sentido = -1;
+        } else if (x < 0) {
+            sentido = 1;
+        }
+
+        disenharCircunferencia(x, 20, 10);
+        x = x + sentido;        // acá crece o decrece y luego vuelve a entrar a la función.
+    }
+
+    setInterval(actualizarPantalla, 100);
+
+</script>
+
+<p>
+    1. Al entrar en la función primero limpia pantalla y después dibuja para que lo último sea dibujo y quede algo en la 
+    misma.<br><br>
+    2. Luego con los if va a ver si suma o resta valores de x para que se mueva. <br><br>
+    3. Dibuja el círculo.<br><br>
+    4. por último si la variable sentido es positivo suma una posición a x y si es negativo viceversa<br><br><br><br>
+
+    Funciona así: entra a la func. limpia pantalla, decide si x vale + o - , dibuja, altera x luego vuelve a entrar.
+</p>

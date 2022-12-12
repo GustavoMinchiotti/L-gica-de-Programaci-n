@@ -1,0 +1,25 @@
+<h1>Canvas en html</h1>
+
+<canvas width="600" height="400"> </canvas> <!-- creo la etiqueta y la estilo -->
+
+<script>
+    let pantalla = document.querySelector("canvas"); // a traves de query conecto la etiqueta canvas con la lógica en Js 
+    let pincel = pantalla.getContext("2d"); // esta variable va  a traer todo el contenido que trabajemos en la pantalla en 2 dimensiones.
+
+    pincel.fillStyle = "lightgrey"
+    pincel.fillRect(0, 0, 600, 400);    // x, y, w, h, == inicio y fin del rectángulo.
+
+function escribirAlerta(CapturaDeEvento){
+    console.log(CapturaDeEvento);   <!--? Ejemplo, creo ese parámetro para capturar el evento y ver su info en la pantalla de desarrollador -->
+    alert("hizo clic");
+}
+
+pantalla.onclick = escribirAlerta; // <!--? Es importante cuando uso la función como parámetro no lleva paréntesis -->
+//                                   //solo va a llamar si hago clic dentro del canvas
+
+
+
+
+
+
+</script>

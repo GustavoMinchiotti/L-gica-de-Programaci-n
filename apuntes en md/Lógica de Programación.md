@@ -312,6 +312,76 @@ https://app.aluracursos.com/course/logica-de-programacion-juegos-animaciones/tas
 
 ### Nuestra pantalla tiene vida, responde sola
 
+En esta clase veremos el lugar exacto donde el usuario hace clic
+
+Con la función creada hago un console.log y en las herramientas de Dev busco la información capturada de cada evento.
+
+![img_23.png](img_23.png)
+
+![img_24.png](img_24.png)
+
+### Mouse, en cuál posición estás
+
+Para esto en la función vamos a crear dos variables: la variable X, que va a ser nuestro `evento.pageX` o 
+sea la posición en esta página, recordando que el evento es un parámetro pasado automáticamente por el navegador,
+por el compilador, al momento que hacemos clic.
+
+Aprovechando esta función creo una nueva para crear círculos en cada clic.
+
+### Cambiando de color
+https://app.aluracursos.com/course/logica-de-programacion-juegos-animaciones/task/72849
+
+Este ejercicio lo intenté con un for para recorrer el array, pero la solución del profesor fue con un if para reiniciar 
+el contador.
+
+El ejercicio tiene comentarios está bien explicado
+
+### Lo que aprendimos
+* A interactuar con el usuario a través de los eventos.
+* A asociar funciones con los eventos y a capturar las propiedades del evento para pasarlas como parámetro.
+
+## Moviendo elementos con animaciones simples
+
+### Ya diseñamos un círculo, ahora a darle vida
+
+**Nuestro desafío en esta aula va a ser que nuestro programa sea interactivo, que él cree esas 
+animaciones en forma automática, que pueda dibujar circunferencias, cuadrados, cualquier figura geométrica**
+
+En esta clase agregamos dos funciones nuevas:
+* limpiar pantalla con el método `.clearRect()` al que se le pasan los parámetros del canvas.
+* Fijar intervalo con la función `setInterval(xxx, 100)` dentro va la función y el número representa el intervalo 
+en milisegundos.
+
+![img_25.png](img_25.png)
+
+### Ejercicio
+
+Hacer que ahora el círculo vaya y vuelva.
+ 
+La circunferencia comienza de izquierda a derecha, pero cuando su posición `X` sea superior a 600, necesitamos invertir 
+su sentido. La misma lógica cuando esté retornando de derecha para izquierda y la posición sea menor que 0, necesitamos 
+invertir el sentido nuevamente.
+
+Siendo así, vamos a crear una variable `sentido` vamos a inicializarla con el valor de 1, indicando que nuestra
+variable `X` debe ser incrementada de 1 en 1, pero cuando sea mayor que 600, `sentido` recibirá el valor de -1, lo que hará 
+el de decremento en la variable `X`. 
+
+( Síntesis: si sumo 1 incrementa si sumo -1 resta asi continuamente hasta que cambia el valor de `sentido`)
+
+Dentro de la función `actualizarPantalla`, antes de llamar a `disenharCircunferencia` vamos a verificar si necesitamos 
+alterar el valor de `sentido`.
+
+Ya que verificamos si `sentido` necesita ser alterado, ahora, después de llamar a la función `disenharCircunferencia`, 
+vamos a usar el valor de nuestra variable para realizar el incremento de` X`.
+
+#### El ejemplo está en la carpeta con el nombre de `círculo va y viene.html`
+
+### Lo que aprendimos
+
+* A realizar animaciones simples.
+* A limpiar la pantalla usando `clearRect()`.
+* A llamar a funciones a cada cierto intervalo de tiempo con `setInterval()`.
+
 
 
 

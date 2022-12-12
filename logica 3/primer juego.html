@@ -1,0 +1,72 @@
+<canvas width="600" height="400" style="border:1px solid #999999;"> </canvas>
+<h1>Juego creado por el profesor</h1>
+
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    pincel.fillStyle = "lightgrey";
+    pincel.fillRect(0, 0, 600, 400);
+
+    var radio = 10;
+    var xAleatorio; // inicializa para usar global
+    var yAleatorio;
+
+    function disenharCircunferencia(x, y, radio, color) { // crea círculos con los parámetros de "disenhaObjetivo"
+        pincel.fillStyle = color;
+        pincel.beginPath();
+        pincel.arc(x, y, radio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    function limpiarPantalla() {
+
+        pincel.clearRect(0, 0, 600, 400);
+
+        pincel.fillStyle = "lightblue"; // Esto lo agregué Yo para que en cada limpieza el canvas tenga color de fondo
+        pincel.fillRect(0, 0, 600, 400);
+    }
+
+
+    function disenharObjetivo(x, y) {   // crea los 3 círculos concéntricos siempre iguales en ese orden con los x e y de "sortearPosicion"
+
+        disenharCircunferencia(x, y, radio + 20, "red");
+        disenharCircunferencia(x, y, radio + 10, "white");
+        disenharCircunferencia(x, y, radio, "red");
+    }
+
+    function sortearPosicion(maximo) {  //establece los máximos que puede dr el random para que estén dentro del canvas
+
+        return Math.floor(Math.random() * maximo);
+
+    }
+
+    function actualizarPantalla() { // limpia--luego sortea los dos ejes x e y -- construye el objeto con los random 
+
+        limpiarPantalla();
+        xAleatorio = sortearPosicion(600);
+        yAleatorio = sortearPosicion(400);
+        disenharObjetivo(xAleatorio, yAleatorio);
+    }
+
+    setInterval(actualizarPantalla, 1000); // Llamo a la función con intervalo de 1 segundo.
+
+    function disparar(evento) {     // localiza el clic 
+
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+
+        if ((x < xAleatorio + radio) &&     // valida si el área es de 10 px "el radio" hacia la izq. del centro random
+            (x > xAleatorio - radio) &&     // valida si el área es de 10 px "el radio" hacia la der. del centro random
+            (y < yAleatorio + radio) &&
+            (y > yAleatorio - radio)) {
+            alert("Tiro Certero");
+        }
+    }
+
+    pantalla.onclick = disparar; // llama a disparar cuando hago clic
+
+</script>
+
+<p>
+
+</p>

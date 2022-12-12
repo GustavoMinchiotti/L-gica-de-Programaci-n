@@ -1,0 +1,72 @@
+<h1>Figuras geométricas automáticas</h1>
+
+<canvas width="600" height="400"> </canvas> <!-- creo la etiqueta y la estilo -->
+
+<script>
+    let pantalla = document.querySelector("canvas"); // a traves de query conecto la etiqueta canvas con la lógica en Js 
+    let pincel = pantalla.getContext("2d"); // esta variable va  a traer todo el contenido que trabajemos en la pantalla en 2 dimensiones.
+
+    pincel.fillStyle = "lightgrey"
+    pincel.fillRect(0, 0, 600, 400);    // x, y, w, h, == inicio y fin del rectángulo.
+
+    function crearCircunferencia(x, y, radio) {
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(x, y, radio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    function limpiarPantalla() {
+
+        pincel.clearRect(0, 0, 600, 400);   // Limpia con las dimensiones de los parámetros
+    }
+
+    let x = 10;  //inicio x en 10 para que este dentro del canvas al iniciar la acción 
+
+    function movimiento() {
+
+        limpiarPantalla();  //esta antes de crear para que en la última iteración no borre el circulo
+        crearCircunferencia(x, 20, 10);
+        x++;
+    }
+
+
+    setInterval(movimiento, 100);
+
+</script>
+
+
+<!--? original -->
+
+<!-- <script>
+    let pantalla = document.querySelector("canvas"); // a traves de query conecto la etiqueta canvas con la lógica en Js 
+    let pincel = pantalla.getContext("2d"); // esta variable va  a traer todo el contenido que trabajemos en la pantalla en 2 dimensiones.
+
+    pincel.fillStyle = "lightgrey"
+    pincel.fillRect(0, 0, 600, 400);    // x, y, w, h, == inicio y fin del rectángulo.
+
+    function crearCircunferencia(x, y, radio) {
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(x, y, radio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    function limpiarPantalla() {
+
+        pincel.clearRect(0, 0, 600, 400);   // Limpia con las dimensiones de los parámetros
+    }
+
+    let x = 10;  //inicio x en 10 para que este dentro del canvas al iniciar la acción 
+
+    function movimiento() {
+
+        limpiarPantalla();  //esta antes de crear para que en la última iteración no borre el circulo
+        crearCircunferencia(x, 20, 10);
+        x++;
+    }
+
+
+    setInterval(movimiento, 100);
+
+</script> -->

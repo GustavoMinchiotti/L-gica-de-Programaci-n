@@ -1,0 +1,63 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var pantalla = document.querySelector('canvas');
+    var pincel = pantalla.getContext('2d');
+
+    pincel.fillStyle = 'gold ';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var puedoDibujar = false;
+
+    function dibujarCirculo(evento) {
+
+        if (puedoDibujar) {
+            var x = evento.pageX - pantalla.offsetLeft;
+            var y = evento.pageY - pantalla.offsetTop;
+            pincel.fillStyle = 'blue';
+            pincel.beginPath();
+            pincel.arc(x, y, 5, 0, 2 * 3.14);
+            pincel.fill();
+        }
+
+    }
+
+    pantalla.onmousemove = dibujarCirculo;
+
+    function habilitarDibujar() {
+
+        puedoDibujar = true;
+    }
+
+    function deshabilitarDibujar() {
+
+        puedoDibujar = false;
+    }
+
+    pantalla.onmousedown = habilitarDibujar;
+
+    pantalla.onmouseup = deshabilitarDibujar;
+
+</script>
+
+<p style="font-size: large; font-family: Arial, Helvetica, sans-serif;">
+    Para desarrollar este programa reutilizamos todo el código que ya teníamos para dibujar circunferencias, <br>
+    y solo adicionamos la lógica nueva de transformar nuestro mouse en un pincel.
+    <br><br>
+
+    Considera que la parte esencial está en saber si diseñamos o no en la pantalla mientras pasamos el mouse sobre la
+    misma. <br>
+    Y sabemos que la condición está asociada a si el botón izquierdo del mouse está o no siendo presionado. <br><br>
+
+    Siendo así declaramos una variable booleana llamada puedoDibujar que comienza como false. <br>
+    Esa variable será utilizada por la función dibujarCirculo para saber si debe o no diseñar. <br><br>
+
+    En el código habrás visto tres eventos nuevos que estamos usando, ellos son onmousemove, onmousedown y onmouseup, <br> 
+    donde el primero permite capturar el movimiento del mouse, el segundo sirve para ejecutar un código cuando el
+    mouse está presionado y
+    <br> el tercero cuando el botón del mouse es soltado. Entonces, asociamos el primer evento a la <br>
+    función para dibujar circulo: pantalla.onmousemove = dibujarCirculo. Además, creamos dos funciones habilitarDibujar <br>
+    y deshabilitarDibujar y asociamos respectivamente cada función con los eventos del mouse onmousedown y onmouseup. <br>
+    Dentro de las funciones, lo que hacemos es atribuir la variable puedoDibujar para true cuando queremos <br>
+    habilitarDibujar y vuelve para false cuando queremos deshabilitarDibujar.
+</p>
